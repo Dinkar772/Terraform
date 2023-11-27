@@ -1,0 +1,13 @@
+
+########## Write a playbook to delete files and folders inside a directory #########
+
+
+- hosts: grp1
+  become: true
+  tasks:
+  -  name: remove web dir contents
+     file: path=/home/HMmachine/temp12345 state=absent mode=775 owner=HMmachine group=HMmachine
+
+
+
+

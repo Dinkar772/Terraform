@@ -1,0 +1,8 @@
+####### Write a playbook to create files and folders inside a directory #####
+
+---
+- hosts: grp1
+  become: true
+  tasks:
+  - name: Create directory
+    file: path=/home/HMmachine/temp12345 state=directory mode=775 owner=HMmachine group=HMmachine

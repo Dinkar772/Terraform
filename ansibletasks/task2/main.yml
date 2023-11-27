@@ -1,0 +1,9 @@
+###### Write a plaaybook to checkout from git, upload the checkout (tarballed) to the production server (hosted externally) and then runs the deployment scrip####
+
+
+- name: a play that runs entirely on the ansible host
+  hosts: grp1
+  connection: local
+  tasks:
+  - name: check out a git repository
+    git: repo=git://foosball.example.org/path/to/repo.git dest=/local/path

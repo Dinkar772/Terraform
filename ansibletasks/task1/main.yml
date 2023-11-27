@@ -1,0 +1,10 @@
+####Write a playbook to create a directory www at /srv on a debian based system using a Ansible playbook.#####
+
+
+- hosts: grp1
+  become: true
+  tasks:
+  - name: Create directory
+    file: path=/home/HMmachine/srv/www state=directory
+    when: ansible_os_family == "Debian"
+

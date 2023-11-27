@@ -1,0 +1,8 @@
+############  Write a playbook to Creating a new user and password with Ansible   #############
+
+
+- hosts: grp1
+  become: true
+  tasks:
+  - name: Create User
+    user: name=u1 password=admin123

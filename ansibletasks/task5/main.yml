@@ -1,0 +1,24 @@
+
+###### Find a way to How to only run one task in ansible playbook ######
+
+
+- hosts: grp1
+  become: true
+  tasks:
+  - name: Install the namenode and jobtracker packages
+    apt: name={{item}} force=yes state=latest
+    with_items: 
+     - hadoop-0.20-mapreduce-jobtracker
+     - hadoop-hdfs-namenode
+     - hadoop-doc
+     - hue-plugins
+
+  - name: start hadoop jobtracker services
+    service: name=hadoop-0.20-mapreduce-jobtracker state=started
+    tags:
+     debug
+
+
+
+
+

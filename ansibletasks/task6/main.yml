@@ -1,0 +1,9 @@
+
+####### Write a playbook to move/rename a file/directory using an Ansible module on a remote system#######
+
+- hosts: grp1
+  become: true
+  tasks:
+  - name: Copy content to file
+    copy: content="Hello World  \n" dest=/home/HMmachine/test1.txt
+
